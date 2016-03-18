@@ -25,7 +25,6 @@ function ref(opts, cb) {
     return stream; 
   }
 
-  // pass through stream, we append or prepend
   ast.parser(opts.input)
     .pipe(stream)
     .pipe(ast.stringify())
