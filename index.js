@@ -43,4 +43,10 @@ function ref(opts, cb) {
   return opts.output;
 }
 
+function serialize(opts) {
+  return new Serialize(opts);
+}
+
+ref.serialize = serialize;
+
 module.exports = ref;

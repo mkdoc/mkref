@@ -34,6 +34,9 @@ function transform(chunk, encoding, cb) {
 }
 
 function flush(cb) {
+
+  //console.error('got refs %s', this.refs.length);
+
   if(this.refs.length) {
     var doc = Node.createDocument()
       , para = Node.createNode(Node.PARAGRAPH);
