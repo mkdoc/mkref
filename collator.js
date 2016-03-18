@@ -25,11 +25,6 @@ function AstCollator(opts) {
  */
 function transform(chunk, encoding, cb) {
 
-  // bad input
-  if(!chunk) {
-    return cb(); 
-  }
-
   if(Node.is(chunk, Node.DOCUMENT) && Array.isArray(chunk.refs)) {
     this.refs = this.refs.concat(chunk.refs);
   }
