@@ -22,13 +22,11 @@ Create the stream and write a [commonmark][] document:
 
 ```javascript
 var ref = require('mkref')
-  , ast = require('mkast')
-  , walk = ast.walk();
-walk
+  , ast = require('mkast');
+ast.src('[example]: http://example.com')
   .pipe(ref())
   .pipe(ast.stringify({indent: 2}))
   .pipe(process.stdout);
-walk.end(ast.parse('[example]: http://example.com'));
 ```
 
 ## API
