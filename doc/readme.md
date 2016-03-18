@@ -8,6 +8,8 @@
 
 ## Usage
 
+Create the stream and write a [commonmark][] document:
+
 <? @source {javascript=s/\.\.\/index/mkref/gm} usage.js ?>
 
 <? @exec mkapi index.js --title=API --level=2 ?>
