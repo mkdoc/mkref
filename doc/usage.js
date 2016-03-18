@@ -1,5 +1,5 @@
-var mkref = require('../index')
+var ref = require('../index')
   , commonmark = require('commonmark')
   , parser = new commonmark.Parser()
-  , stream = mkref();
+  , stream = ref();
 stream.end(parser.parse('[example]: http://example.com'));

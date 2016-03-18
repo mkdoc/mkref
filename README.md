@@ -22,10 +22,10 @@ For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
 Create the stream and write a [commonmark][] document:
 
 ```javascript
-var mkref = require('mkref')
+var ref = require('mkref')
   , commonmark = require('commonmark')
   , parser = new commonmark.Parser()
-  , stream = mkref();
+  , stream = ref();
 stream.end(parser.parse('[example]: http://example.com'));
 ```
 
