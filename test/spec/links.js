@@ -7,6 +7,12 @@ var expect = require('chai').expect
   , utils = require('../util');
 
 describe('mkref:', function() {
+  
+  it('should return stream with no options', function(done) {
+    var stream = mkref();
+    expect(stream).to.be.an('object');
+    done();
+  });
 
   it('should append link references to stream', function(done) {
     var source = 'test/fixtures/links.md'

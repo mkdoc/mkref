@@ -16,7 +16,6 @@ var mkast = require('mkast')
  */
 function ref(opts, cb) {
 
-  /* istanbul ignore next: always pass options in test specs */
   opts = opts || {};
   opts.input = opts.input;
   opts.output = opts.output;
