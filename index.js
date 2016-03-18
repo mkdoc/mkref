@@ -1,6 +1,5 @@
-var mkast = require('mkast')
-  , Collator = require('./collator')
-  , Serialize = require('mkast/lib/serialize');
+var ast = require('mkast')
+  , Collator = require('./collator');
 
 /**
  *  Gets the link reference collation stream.
@@ -20,17 +19,16 @@ function ref(opts, cb) {
   opts.input = opts.input;
   opts.output = opts.output;
 
-  var stream = new Collator()
-    , serialize = new Serialize();
+  var stream = new Collator();
 
   if(!opts.input || !opts.output) {
     return stream; 
   }
 
   // pass through stream, we append or prepend
-  mkast.parser(opts.input)
+  ast.parser(opts.input)
     .pipe(stream)
-    .pipe(serialize)
+    .pipe(ast.stringify())
     .pipe(opts.output);
 
   if(cb) {
