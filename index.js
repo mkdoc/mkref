@@ -3,14 +3,14 @@ var mkast = require('mkast')
   , Serialize = require('mkast/lib/serialize');
 
 /**
+ *  Gets the link reference collation stream.
+ *
  *  @function ref
  *  @param {Object} [opts] processing options.
  *  @param {Function} [cb] callback function.
  *
  *  @option {Readable} [input] input stream.
  *  @option {Writable} [output] output stream.
- *  @option {String} [message] referator message.
- *  @option {Boolean} [prepend] prepend message to the stream.
  *
  *  @returns an output stream.
  */
