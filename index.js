@@ -29,7 +29,7 @@ function ref(opts, cb) {
   }
 
   // pass through stream, we append or prepend
-  mkast.parser(opts.input, {wrap: true})
+  mkast.parser(opts.input)
     .pipe(stream)
     .pipe(serialize)
     .pipe(opts.output);
