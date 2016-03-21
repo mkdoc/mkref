@@ -29,6 +29,19 @@ ast.src('[example]: http://example.com')
   .pipe(process.stdout);
 ```
 
+## Help
+
+```
+mkref [options]
+
+Link reference collation.
+
+  -h, --help  Display this help and exit
+  --version   Print the version and exit
+
+Report bugs to https://github.com/mkdoc/mkref/issues
+```
+
 ## API
 
 ### ref
