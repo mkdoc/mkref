@@ -1,5 +1,5 @@
 var ast = require('mkast')
-  , Collator = require('./collator');
+  , LinkReferences = require('./link-references');
 
 /**
  *  Gets the link reference collation stream.
@@ -19,7 +19,7 @@ function ref(opts, cb) {
   opts.input = opts.input;
   opts.output = opts.output;
 
-  var stream = new Collator();
+  var stream = new LinkReferences();
 
   if(!opts.input || !opts.output) {
     return stream; 
