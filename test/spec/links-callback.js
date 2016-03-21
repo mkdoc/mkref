@@ -24,12 +24,12 @@ describe('mkref:', function() {
     function onFinish() {
       var result = utils.result(target);
 
-      //console.dir(result);
-
       // open document
       expect(result[0]._type).to.eql(Node.DOCUMENT);
+
       // mock document paragraph
       expect(result[1]._type).to.eql(Node.PARAGRAPH);
+
       // eof main document
       expect(result[2]._type).to.eql(Node.EOF);
 

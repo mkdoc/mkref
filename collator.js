@@ -41,6 +41,8 @@ function flush(cb) {
     var doc = Node.createDocument()
       , para = Node.createNode(Node.PARAGRAPH);
 
+    doc._linkRefs = true;
+
     this.refs.forEach(function(ref) {
       para.appendChild(attach(ref));
     })
@@ -48,7 +50,7 @@ function flush(cb) {
     // NOTE: do not append paragraph, push to the stream
     this.push(doc);
     this.push(para);
-    this.push(Node.createNode(Node.EOF));
+    this.push(Node.createNode(Node.EOF, {_linkRefs: true}));
   }
   cb();
 }
