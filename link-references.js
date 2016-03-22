@@ -1,6 +1,5 @@
 var through = require('through3')
-  , Node = require('mkast').Node
-  , attach = require('mkast/lib/attach');
+  , Node = require('mkast').Node;
 
 /**
  *  Collates link references and appends a document to the stream with a 
@@ -39,13 +38,14 @@ function transform(chunk, encoding, cb) {
 function flush(cb) {
   var i
     , k
-    , links = [];
+    , links = []
+    , link;
 
   //console.error('got refs %s', this.refs.length);
 
   for(i = 0;i < this.refs.length;i++) {
     for(k in this.refs[i]) {
-      links.push(
+      link = 
         Node.createNode(
           Node.LINK, {
             _label: k, 
@@ -53,8 +53,9 @@ function flush(cb) {
             _title: this.refs[i][k].title,
             _linkType: 'ref'
           }
-        )
-      );
+        );
+      link.appendChild(Node.createNode(Node.TEXT, {literal: k}))
+      links.push(link);
     } 
   }
 
@@ -65,7 +66,7 @@ function flush(cb) {
     doc._linkRefs = true;
 
     links.forEach(function(ref) {
-      para.appendChild(attach(ref));
+      para.appendChild(ref);
     })
 
     // NOTE: do not append paragraph, push to the stream

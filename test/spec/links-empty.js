@@ -15,7 +15,7 @@ describe('mkref:', function() {
 
     // mock file for correct relative path
     // mkcat normally injects this info
-    data._file = source;
+    data.file = source;
 
     var input = mkast.serialize(data)
       , output = fs.createWriteStream(target)
@@ -27,11 +27,11 @@ describe('mkref:', function() {
       var result = utils.result(target);
 
       // open document
-      expect(result[0]._type).to.eql(Node.DOCUMENT);
+      expect(result[0].type).to.eql(Node.DOCUMENT);
       // mock document paragraph
-      expect(result[1]._type).to.eql(Node.PARAGRAPH);
+      expect(result[1].type).to.eql(Node.PARAGRAPH);
       // eof main document
-      expect(result[2]._type).to.eql(Node.EOF);
+      expect(result[2].type).to.eql(Node.EOF);
 
       // assert on no additional data in the stream
       expect(result[3]).to.eql(undefined);
