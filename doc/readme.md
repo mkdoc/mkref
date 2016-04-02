@@ -8,6 +8,10 @@ Collates link references from all documents in the stream and flushes a paragrap
 
 <? @include {=readme} install.md ?>
 
+***
+<!-- @toc -->
+***
+
 ## Usage
 
 Create the stream and write a [commonmark][] document:
