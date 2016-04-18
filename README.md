@@ -20,6 +20,7 @@ For the command line interface install [mkdoc][] globally (`npm i -g mkdoc`).
 
 - [Install](#install)
 - [Usage](#usage)
+- [Example](#example)
 - [Help](#help)
 - [API](#api)
   - [ref](#ref)
@@ -41,17 +42,26 @@ ast.src('[example]: http://example.com')
   .pipe(process.stdout);
 ```
 
+## Example
+
+Collate link references:
+
+```shell
+mkcat README.md | mkref | mkout
+```
+
 ## Help
 
 ```
-mkref [options]
+Usage: mkref [options]
 
-Link reference collation.
+  Link reference collation.
 
+Options
   -h, --help              Display help and exit
   --version               Print the version and exit
 
-Report bugs to https://github.com/mkdoc/mkref/issues
+mkref@1.0.8
 ```
 
 ## API
@@ -80,7 +90,7 @@ MIT
 
 ---
 
-Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 2, 2016
+Created by [mkdoc](https://github.com/mkdoc/mkdoc) on April 18, 2016
 
 [mkdoc]: https://github.com/mkdoc/mkdoc
 [mkparse]: https://github.com/mkdoc/mkparse

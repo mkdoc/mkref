@@ -12,13 +12,7 @@ Collates link references from all documents in the stream and flushes a paragrap
 <!-- @toc -->
 ***
 
-## Usage
-
-Create the stream and write a [commonmark][] document:
-
-<? @source {javascript=s/\.\.\/index/mkref/gm} usage.js ?>
-
-<? @include {=readme} help.md ?>
+<? @include {=readme} usage.md example.md help.md ?>
 
 <? @exec mkapi index.js --title=API --level=2 ?>
 <? @include {=readme} license.md links.md ?>
